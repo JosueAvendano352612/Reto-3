@@ -1,0 +1,24 @@
+class RegistroUsuarios:
+    def __init__(self):
+        self.usuarios = []
+        self.id_counter = 1  # Contador para el ID único
+
+    def registrar_usuario(self, nombre, email):
+        nuevo_usuario = {'id': self.id_counter, 'nombre': nombre, 'email': email}
+        self.usuarios.append(nuevo_usuario)
+        self.id_counter += 1
+        print(f"Usuario registrado con éxito. ID: {nuevo_usuario['id']}")
+
+    def imprimir_registros(self):
+        print("\nListado de usuarios registrados:")
+        for usuario in self.usuarios:
+            print(f"ID: {usuario['id']}, Nombre: {usuario['nombre']}, Email: {usuario['email']}")
+
+# Ejemplo de uso
+registro = RegistroUsuarios()
+
+registro.registrar_usuario("Usuario1", "usuario1@example.com")
+registro.registrar_usuario("Usuario2", "usuario2@example.com")
+registro.registrar_usuario("Usuario3", "usuario3@example.com")
+
+registro.imprimir_registros()
